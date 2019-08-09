@@ -10,7 +10,8 @@
     recognition.onend = reset;
 
     recognition.onresult = function (event) {
-      alert(JSON.stringify(event));
+      console.log(JSON.stringify(event));
+      console.log(event.resultIndex);
       for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results.final) {
           textarea.value += event.results[i][0].transcript;
